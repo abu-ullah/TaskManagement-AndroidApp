@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagementProject.Controllers.DeleteTaskPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Margin="5,0,5,0">
+            <Frame CornerRadius="10" Margin="5,0,5,0">
+                <StackLayout Margin="5,0,5,0">
+                    <Entry x:Name="txtTaskId" Text="{Binding TaskUid}" Placeholder="Task ID" IsReadOnly="True" />
+                    <Entry x:Name="txtTaskDescription" Text="{Binding Description}" Placeholder="Description" IsReadOnly="True" />
+                    <Entry x:Name="txtAssignedTo" Text="{Binding AssignedToName}" Placeholder="AssignedTo" IsReadOnly="True"/>
+                    <Entry x:Name="txtCreatedBy" Text="{Binding CreatedByName}" Placeholder="CreatedBy" IsReadOnly="True"/>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnDelete" Text="Delete" BackgroundColor="DeepSkyBlue" CornerRadius="10" Clicked="btnDelete_Clicked"/>
+            <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="OrangeRed" CornerRadius="10" Clicked="btnCancel_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

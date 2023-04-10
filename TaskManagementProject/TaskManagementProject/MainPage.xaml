@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagementProject.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Task Management" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Margin="10, 0, 10, 0">
+            <StackLayout>
+                <Entry x:Name="txtEmail" Placeholder="Email" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout>
+                <Entry x:Name="txtPassword" Placeholder="Password" HorizontalOptions="FillAndExpand" IsPassword="True" />
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="btnLogin" Text="Login" BackgroundColor="Black" TextColor="White" FontSize="20" Clicked="btnLogin_Clicked" />
+                <Button x:Name="btnSignUp" Text="Sign Up" BackgroundColor="Transparent" TextColor="Blue" FontSize="18" Clicked="btnSignUp_Clicked" />
+                <Label x:Name="lblResponse" Text="" TextColor="Red" FontSize="23" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

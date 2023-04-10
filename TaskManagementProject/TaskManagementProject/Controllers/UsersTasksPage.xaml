@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManagementProject.Controllers.UsersTasksPage">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Frame BackgroundColor="Black" Padding="20" CornerRadius="0">
+                <Label Text="Tasks Created by You"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="24"
+                       />
+            </Frame>
+            <Grid Padding="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <ListView x:Name="listTasks" RowHeight="50" ItemSelected="listTasks_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout VerticalOptions="FillAndExpand" Padding="10,0,10,0">
+                                        <Label Text="{Binding TaskUid}" FontSize="17"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding AssignedToName}" HorizontalOptions="EndAndExpand" TextColor="Red"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout Grid.Row="1" BackgroundColor="Black" VerticalOptions="FillAndExpand">
+                    <BoxView BackgroundColor="Black" HeightRequest="5"/>
+                    <Frame CornerRadius="10" Margin="5,0,5,0">
+                        <StackLayout Margin="5,0,5,0">
+                            <Entry x:Name="txtTaskDescription" Text="" Placeholder="Description"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Picker x:Name="pickerUser" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" ItemDisplayBinding="{Binding Name}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Button x:Name="btnAddTask" Text="Add Task" BackgroundColor="OrangeRed" CornerRadius="10" Clicked="btnAddTask_Clicked" Margin="5,0,5,0"/>
+                    <Button x:Name="btnSeeTasksAssignedTo" Text="See Tasks Assigned To You" BackgroundColor="OrangeRed" CornerRadius="10" Clicked="btnSeeTasksAssignedTo_Clicked" Margin="5,0,5,0"/>
+                    <Button x:Name="btnLogout" Text="Logout" BackgroundColor="OrangeRed" CornerRadius="10" Clicked="btnLogout_Clicked" Margin="5,0,5,0"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
