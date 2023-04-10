@@ -1,6 +1,6 @@
 # TaskManagement-AndroidApp
 
-Description:
+Description: A tasks managing Android mobile application built using Visual Studio's C# Xamarin Forms. 
 
 Features:
 (Note: All Tasks and Users data are fetched from an API)
